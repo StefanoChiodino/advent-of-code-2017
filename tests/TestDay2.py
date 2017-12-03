@@ -9,4 +9,4 @@ class TestDay2(unittest.TestCase):
         input = [[5, 1, 9, 5],
                  [7, 5, 3],
                  [2, 4, 6, 8]]
-        self.assertEqual(day2(input), 18)
+        self.assertEqual(18, day2(input))
