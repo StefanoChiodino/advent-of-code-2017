@@ -1,13 +1,27 @@
-def day1(input):
-    output = 0
-
-    for i in range(0, len(input)):
-        current = input[i]
-        next = input[(i + 1) % len(input)]
-        if current == next:
-            output += int(current)
-            i += +1
+def captcha(sequence, isValid):
+    valid_numbers = [int(sequence[i]) for i in range(0, len(sequence)) if isValid(sequence, i)]
+    output = sum(valid_numbers)
     return output
+
+
+def day1a(sequence):
+    output = captcha(sequence, _day1a_validation)
+    return output
+
+
+def day1b(sequence):
+    output = captcha(sequence, _day1b_validation)
+    return output
+
+
+def _day1a_validation(sequence, index):
+    is_valid = sequence[index] == sequence[(index + 1) % len(sequence)]
+    return is_valid
+
+
+def _day1b_validation(sequence, index):
+    is_valid = sequence[index] == sequence[int((index + (len(sequence) / 2)) % len(sequence))]
+    return is_valid
 
 
 if __name__ == "__main__":
@@ -32,4 +46,5 @@ if __name__ == "__main__":
               '442337761321272333982924289323437277224565149928416255435841327756139118119744528993269157174414264387' \
               '573331116323982614862952264597611885999285995516357519648695594299657387614793341626318866519144574571' \
               '816535351149394735916975448425618171572917195165594323552199346814729617189679698944337146'
-    print(day1(myInput))
+    print(day1a(myInput))
+    print(day1b(myInput))
