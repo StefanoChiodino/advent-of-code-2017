@@ -1,5 +1,7 @@
 import re
 
+import os
+
 
 class Day9:
     def day9(self, stream):
@@ -19,3 +21,10 @@ class Day9:
         sanitised_stream = re.sub(r'<.*?>', '', sanitised_stream)
         sanitised_stream = re.sub(r',', '', sanitised_stream)
         return sanitised_stream
+
+
+if __name__ == "__main__":
+    path = os.path.join("..", "inputs", "day9_inputs.txt")
+    lines = open(path)
+    line = lines.readline()
+    print(Day9().day9(line))
