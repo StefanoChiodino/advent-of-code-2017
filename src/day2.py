@@ -1,9 +1,9 @@
-def day2a(input):
+def day2a(input: [int]) -> int:
     output = sum([max(l) - min(l) for l in input])
     return output
 
 
-def find_whole_division(numbers):
+def find_whole_division(numbers: [int]) -> int:
     for i in range(0, len(numbers)):
         x = numbers[i]
         for j in range(i + 1, len(numbers)):
@@ -14,7 +14,7 @@ def find_whole_division(numbers):
                 return y / x
 
 
-def day2b(input):
+def day2b(input: [int]) -> int:
     output = sum([find_whole_division(l) for l in input])
     return int(output)
 

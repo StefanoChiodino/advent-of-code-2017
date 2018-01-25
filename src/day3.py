@@ -1,7 +1,7 @@
 import math
 
 
-def day3a(input):
+def day3a(input: int) -> int:
     # Forces the square to have an odd number as side length.
     side_of_memory_square = (math.ceil((math.sqrt(input) - 1) / 2) * 2) + 1
     side_of_memory_square_minus_center = side_of_memory_square - 1
@@ -39,7 +39,7 @@ class Point:
         return hash(self.x) ^ hash(self.y)
 
 
-def calculate_value_for_position(current_coordinates, map):
+def calculate_value_for_position(current_coordinates: (int, int), map: {Point, int}) -> int:
     value = get_or_default(map, current_coordinates + Point(1, 0), 0) \
           + get_or_default(map, current_coordinates + Point(1, 1), 0) \
           + get_or_default(map, current_coordinates + Point(1, -1), 0) \
@@ -51,11 +51,11 @@ def calculate_value_for_position(current_coordinates, map):
     return value
 
 
-def get_or_default(map, key, default):
+def get_or_default(map: {Point, int}, key: Point, default: int) -> int:
     return map[key] if key in map.keys() else default
 
 
-def day3b(input):
+def day3b(input: int) -> int:
     current_coordinates = Point(0, 0)
     value = 1
     map = {current_coordinates: value}

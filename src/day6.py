@@ -1,7 +1,8 @@
 from copy import copy
+from typing import List
 
 
-def day6(memory_blocks):
+def day6(memory_blocks: List[int]) -> int:
     previous_states = []
     rebalances = 0
     while memory_blocks not in previous_states:
@@ -11,7 +12,7 @@ def day6(memory_blocks):
     return rebalances
 
 
-def rebalance(memory_blocks):
+def rebalance(memory_blocks: List[int]) -> None:
     max_blocks = max(memory_blocks)
     index = memory_blocks.index(max_blocks)
     memory_blocks[index] = 0

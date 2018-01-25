@@ -1,16 +1,17 @@
 import os
+from typing import List
 
 
 class Day4:
     @staticmethod
-    def is_passphrase_valid(passphrase):
+    def is_passphrase_valid(passphrase: str) -> bool:
         words = passphrase.split(" ")
         words_set = set(words)
         is_valid = len(words) == len(words_set)
         return is_valid
 
     @staticmethod
-    def get_valid_passphrases(passphrases):
+    def get_valid_passphrases(passphrases: List[str]) -> List[str]:
         valid_passphrases = [pp for pp in passphrases if Day4.is_passphrase_valid(pp)]
         return valid_passphrases
 

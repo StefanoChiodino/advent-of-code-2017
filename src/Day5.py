@@ -1,7 +1,8 @@
 import os
+from typing import List
 
 
-def day5a(jump_offsets):
+def day5a(jump_offsets: List[int]) -> int:
     i = 0
     steps = 0
     while 0 <= i < len(jump_offsets):
@@ -12,7 +13,7 @@ def day5a(jump_offsets):
     return steps
 
 
-def day5b(jump_offsets):
+def day5b(jump_offsets: List[int]) -> int:
     i = 0
     steps = 0
     while 0 <= i < len(jump_offsets):

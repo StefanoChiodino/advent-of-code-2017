@@ -1,9 +1,10 @@
 import re
 
 import os
+from typing import List
 
 
-def day7(instructions):
+def day7(instructions: List[str]) -> str:
     discs = []
     for match in [re.match(r"(\w*)\s?\((\d*)\)?\s?-?>?\s?((\w*,?\s?)*)", instruction) for instruction in instructions]:
         disc = Disc()

@@ -1,25 +1,25 @@
-def captcha(sequence, isValid):
+def captcha(sequence: str, isValid: bool) -> int:
     valid_numbers = [int(sequence[i]) for i in range(0, len(sequence)) if isValid(sequence, i)]
     output = sum(valid_numbers)
     return output
 
 
-def day1a(sequence):
+def day1a(sequence: str) -> int:
     output = captcha(sequence, _day1a_validation)
     return output
 
 
-def day1b(sequence):
+def day1b(sequence: str) -> int:
     output = captcha(sequence, _day1b_validation)
     return output
 
 
-def _day1a_validation(sequence, index):
+def _day1a_validation(sequence: str, index: int) -> bool:
     is_valid = sequence[index] == sequence[(index + 1) % len(sequence)]
     return is_valid
 
 
-def _day1b_validation(sequence, index):
+def _day1b_validation(sequence: str, index: int) -> bool:
     is_valid = sequence[index] == sequence[int((index + (len(sequence) / 2)) % len(sequence))]
     return is_valid
 

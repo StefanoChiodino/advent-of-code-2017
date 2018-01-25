@@ -4,7 +4,7 @@ import os
 
 
 class Day9:
-    def day9(self, stream):
+    def day9(self, stream: str) -> int:
         stream = self.sanitise_stream(stream)
         score = 0
         level = 0
@@ -16,7 +16,7 @@ class Day9:
                 level -= 1
         return score
 
-    def sanitise_stream(self, stream):
+    def sanitise_stream(self, stream: str) -> str:
         sanitised_stream = re.sub(r'!.', '', stream)
         sanitised_stream = re.sub(r'<.*?>', '', sanitised_stream)
         sanitised_stream = re.sub(r',', '', sanitised_stream)

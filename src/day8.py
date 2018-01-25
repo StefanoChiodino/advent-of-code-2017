@@ -1,7 +1,8 @@
 import os
+from typing import List
 
 
-def day8(instructions):
+def day8(instructions: List[str]) -> int:
     register = {}
     for instruction in instructions:
         instruction_parts = instruction.split(" ")
@@ -33,7 +34,7 @@ def day8(instructions):
         if check_is_valid:
             register[name] += quantity * (-1 if call == "dec" else 1)
 
-    return max([ register[key] for key in register])
+    return max([register[key] for key in register])
 
 
 if __name__ == "__main__":
