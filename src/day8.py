@@ -39,5 +39,6 @@ def day8(instructions: List[str]) -> int:
 
 if __name__ == "__main__":
     path = os.path.join("..", "inputs", "day8_inputs.txt")
-    lines = [l.strip() for l in open(path)]
+    with open(path) as file:
+        lines = [l.strip() for l in file]
     print(day8(lines))

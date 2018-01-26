@@ -18,6 +18,7 @@ class Day4:
 
 if __name__ == "__main__":
     path = os.path.join("..", "inputs", "day4_inputs.txt")
-    passphrases = [line.strip() for line in open(path, "r")]
+    with open(path) as file:
+        passphrases = [line.strip() for line in file]
     valid_passphrases = Day4.get_valid_passphrases(passphrases)
     print(len(valid_passphrases))

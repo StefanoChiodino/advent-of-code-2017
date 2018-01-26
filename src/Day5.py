@@ -26,6 +26,7 @@ def day5b(jump_offsets: List[int]) -> int:
 
 if __name__ == "__main__":
     path = os.path.join("..", "inputs", "day5_inputs.txt")
-    jump_offsets = [int(l) for l in open(path)]
+    with open(path) as file:
+        jump_offsets = [int(l) for l in file]
     print(day5a(jump_offsets))
     print(day5b(jump_offsets))

@@ -25,6 +25,6 @@ class Day9:
 
 if __name__ == "__main__":
     path = os.path.join("..", "inputs", "day9_inputs.txt")
-    lines = open(path)
-    line = lines.readline()
+    with open(path) as lines:
+        line = lines.readline()
     print(Day9().day9(line))
