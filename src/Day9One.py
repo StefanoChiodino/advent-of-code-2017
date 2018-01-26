@@ -3,7 +3,7 @@ import re
 import os
 
 
-class Day9:
+class Day9One:
     def day9(self, stream: str) -> int:
         stream = self.sanitise_stream(stream)
         score = 0
@@ -27,4 +27,4 @@ if __name__ == "__main__":
     path = os.path.join("..", "inputs", "day9_inputs.txt")
     with open(path) as lines:
         line = lines.readline()
-    print(Day9().day9(line))
+    print(Day9One().day9(line))
